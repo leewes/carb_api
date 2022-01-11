@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_id: one
+  week: 1
+  day_id: one
+  carb_id: one
+
+two:
+  name_id: two
+  week: 1
+  day_id: two
+  carb_id: two
