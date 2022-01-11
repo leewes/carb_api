@@ -1,10 +1,10 @@
 class Api::MealsController < ApplicationController
-    before_action :find_meal, only: [ :show, :update, :destroy]
+    before_action :find_meal, only: [:show, :update, :destroy]
 
     # GET /meals
     def index
-        @meals = Meal.all
-        render json: @meals
+        @meal = Meal.all
+        render json: @meal
     end
 
     # GET /meal/:id
