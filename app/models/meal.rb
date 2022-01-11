@@ -1,5 +1,5 @@
 class Meal < ApplicationRecord
-  belongs_to :name_id
-  belongs_to :day_id
-  belongs_to :carb_id
+  belongs_to :users
+  belongs_to :days
+  belongs_to :carbs
 end
