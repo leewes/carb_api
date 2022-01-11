@@ -1,5 +1,6 @@
 class Api::MealsController < ApplicationController
-    
+    before_action :find_meal, only: [ :show, :update, :destroy]
+
     # GET /meals
     def index
         @meals = Meal.all
@@ -8,7 +9,6 @@ class Api::MealsController < ApplicationController
 
     # GET /meal/:id
     def show
-        @meal = Meal.find(params[:id])
         render json: @meal
     end
 
@@ -24,7 +24,6 @@ class Api::MealsController < ApplicationController
 
     # PUT /users/:id
     def update
-        @meal = Meal.find(params[:id])
         if @meal
             @meal.update(meal_params)
             render json: { message: 'Meal was updated.'}, status: 200
@@ -35,13 +34,22 @@ class Api::MealsController < ApplicationController
 
     # DELETE /meals/:id
     def destroy
-        @meal = Meal.find(params[:id])
         if @meal
             @meal.destroy
             render json: { message: 'Meal was deleted.'}, status: 200
         else
             render json: { error: 'Error in DELETE. Cannot delete meal.'}, status: 400
         end
+    end
+
+    private
+
+    def find_meal
+        @meal = Meal.find(params[:id])
+    end
+
+    def meal_params
+        params.require(:meal).permit(:users_id, :week, :days_id, :carbs_id)
     end
 
 end
