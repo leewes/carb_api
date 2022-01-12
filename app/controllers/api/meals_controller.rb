@@ -38,7 +38,7 @@ class Api::MealsController < ApplicationController
             @meal.destroy
             render json: { message: 'Meal was deleted.'}, status: 200
         else
-            render json: { error: 'Error in DELETE. Cannot delete meal.'}, status: 400
+            render error: { error: 'Error in DELETE. Cannot delete meal.'}, status: 400
         end
     end
 
