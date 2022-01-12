@@ -14,14 +14,14 @@ class Api::CarbsController < ApplicationController
     # POST /carbs
     def create
         @carb = Carb.new(carb_params)
-        if @Carb.save
+        if @carb.save
             render json: @carb
         else
             render error: { error: 'Error in POST. Cannot create new carb.'}, status: 400
         end
     end
 
-    # PUT /users/:id
+    # PUT /carbs/:id
     def update
         if @carb
             @carb.update(carb_params)
@@ -31,7 +31,7 @@ class Api::CarbsController < ApplicationController
         end
     end
 
-    # DELETE /carbss/:id
+    # DELETE /carbs/:id
     def destroy
         if @carb
             @carb.destroy
