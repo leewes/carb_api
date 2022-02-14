@@ -77,7 +77,6 @@ To get a local copy up and running follow these steps.
 
 The application should now be running locally on http://localhost:3000
 
-<img align="center" src="./tracker_image.png" />
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
